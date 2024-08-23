@@ -29,7 +29,9 @@ const playButton = document.querySelector('button');
 
 // Funzione per creare la griglia
 const createGrid = () => {
-    // VerificO se la griglia è già stata creata, se già presente non crearne un'altra.
+
+    //!VALIDAZIONE
+    // Verifico se la griglia è già stata creata, se già presente non crearne un'altra.
     if (gridContainer.children.length > 0) {
         return;
     }
@@ -42,8 +44,16 @@ const createGrid = () => {
         cell.classList.add('cell');
         //Aggiungo il numero alle celle
         cell.textContent = i;
-
+        //Stampo tutti i numeri della cella per un controllo
         console.log('Cella numero: ', i)
+
+        // Aggiungo l'event listener alla cella
+        cell.addEventListener('click', function () {
+            // Aggiungo la classe per colorare la cella
+            cell.classList.add('clicked');
+            // Stampo il numero della cella come risultato in console
+            console.log(`Cella cliccata: ${i}`);
+        });
 
         // Aggiungo la cella alla griglia
         gridContainer.appendChild(cell);

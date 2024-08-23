@@ -24,3 +24,7 @@ body {
 footer a {
     color: #000;
 }
+
+.cell.clicked {
+    background-color: lightblue;
+}
