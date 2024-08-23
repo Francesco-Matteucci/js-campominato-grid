@@ -49,8 +49,8 @@ const createGrid = () => {
 
         // Aggiungo l'event listener alla cella
         cell.addEventListener('click', function () {
-            // Aggiungo la classe per colorare la cella
-            cell.classList.add('clicked');
+            // Gestisco la classe per colorare la cella al click, aggiungo o rimuovo
+            cell.classList.toggle('clicked');
             // Stampo il numero della cella come risultato in console
             console.log(`Cella cliccata: ${i}`);
         });
