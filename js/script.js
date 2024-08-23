@@ -26,26 +26,55 @@ Note:
 // Recupero gli elementi dal DOM
 const gridContainer = document.querySelector('.grid-container');
 const playButton = document.querySelector('button');
+const stageSelect = document.getElementById('stage');
 
 // Funzione per creare la griglia
 const createGrid = () => {
+    // Rimuovo eventuali classi di griglia precedenti
+    gridContainer.classList.remove('cell-10', 'cell-9', 'cell-7');
 
-    //!VALIDAZIONE
-    // Verifico se la griglia è già stata creata, se già presente non crearne un'altra.
-    if (gridContainer.children.length > 0) {
-        return;
+    // Rimuovo tutto le celle esistenti, prima della creazione di una nuova griglia
+    gridContainer.innerHTML = '';
+
+    // Creo la variabile per recuperare il livello di stage selezionato dall'utente
+    const stage = parseInt(stageSelect.value);
+
+    let cellCount;
+    let cellClass;
+
+    // Determino il numero di celle e righe in base allo stage
+    switch (stage) {
+        case 1:
+            cellCount = 100;
+            cellClass = 'cell-10';
+            break;
+        case 2:
+            cellCount = 81;
+            cellClass = 'cell-9';
+            break;
+        case 3:
+            cellCount = 49;
+            cellClass = 'cell-7';
+            break;
+        default:
+            cellCount = 100;
+            cellClass = 'cell-10';
+            alert('Stage non valido, non barare (!!) ed utilizza lo stage Facile, Medio o Difficile.');
+            return;
     }
 
-    // Creo le celle
-    for (let i = 1; i <= 100; i++) {
+    // Aggiungo la classe dello stage appropriato
+    gridContainer.classList.add(cellClass);
 
+    // Creo le celle
+    for (let i = 1; i <= cellCount; i++) {
         // Creo un elemento per la cella
         const cell = document.createElement('div');
         cell.classList.add('cell');
-        //Aggiungo il numero alle celle
+        // Aggiungo il numero alle celle
         cell.textContent = i;
-        //Stampo tutti i numeri della cella per un controllo
-        console.log('Cella numero: ', i)
+        // Stampo tutti i numeri della cella per un controllo
+        console.log('Cella numero: ', i);
 
         // Aggiungo l'event listener alla cella
         cell.addEventListener('click', function () {
@@ -58,7 +87,10 @@ const createGrid = () => {
         // Aggiungo la cella alla griglia
         gridContainer.appendChild(cell);
     }
-}
+};
 
 // Aggiungo l'event listener al bottone
 playButton.addEventListener('click', createGrid);
+
+// Aggiungo l'event listener di cambio selezione agli stage
+stageSelect.addEventListener('change', createGrid);

@@ -20,7 +20,14 @@
             <!-- header di Campo Minato -->
             <header class="d-flex justify-content-between align-items-center p-3 bg-light">
                 <h1 class="mb-0 ms-4">Campo Minato</h1>
-                <button class="btn btn-secondary me-4">Play</button>
+                <div class="d-flex align-items-center">
+                    <select id="stage" class="form-select me-2">
+                        <option value="1">Facile</option>
+                        <option value="2">Medio</option>
+                        <option value="3">Difficile</option>
+                    </select>
+                    <button class="btn btn-secondary" id="play-button">Play</button>
+                </div>
             </header>
             <!-- Contenuto principale -->
             <main class="container d-flex justify-content-center align-items-center mt-4">

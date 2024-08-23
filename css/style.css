@@ -3,15 +3,35 @@ body {
     font-family: Arial, sans-serif;
 }
 
+header .form-select {
+    width: 150px;
+}
+
+header .btn {
+    width: 100px;
+}
+
 .grid-container {
+    gap: 1px;
     width: 700px;
+}
+
+.cell-10 .cell {
+    flex-basis: calc(100% / 10 - 2px);
+}
+
+.cell-9 .cell {
+    flex-basis: calc(100% / 9 - 2px);
+}
+
+.cell-7 .cell {
+    flex-basis: calc(100% / 7 - 2px);
 }
 
 .cell {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-basis: 10%;
     height: 70px;
     border: 1px solid black;
     cursor: pointer;
