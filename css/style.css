@@ -1,6 +1,11 @@
 body {
-    background-color: #83f4c1;
-    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    border-bottom: 2px solid #007bff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header .form-select {
@@ -11,9 +16,28 @@ header .btn {
     width: 100px;
 }
 
+h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+header button.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+header button.btn:hover {
+    background-color: #0056b3;
+}
+
 .grid-container {
     gap: 1px;
-    width: 700px;
+    max-width: 700px;
 }
 
 .cell-10 .cell {
@@ -35,16 +59,49 @@ header .btn {
     height: 70px;
     border: 1px solid black;
     cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #007bff;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+    background-color: #e0f0ff;
+    transform: scale(1.05);
+}
+
+.cell.clicked {
+    background-color: #007bff;
+    color: #fff;
+}
+
+footer {
+    border-top: 2px solid #007bff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+footer p {
+    font-size: 0.875rem;
+}
+
+footer a,
+p {
+    color: #007bff;
+}
+
+footer a {
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #0056b3;
 }
 
 .heart {
     font-size: 16px;
-}
-
-footer a {
-    color: #000;
-}
-
-.cell.clicked {
-    background-color: lightblue;
 }
