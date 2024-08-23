@@ -21,3 +21,31 @@ Note:
 - questo bonus richiederà un evento diverso dal 'click'
 - questo bonus richiederà una riflessione extra per quel che riguarda il calcolo della larghezza delle celle
 */
+
+
+// Recupero gli elementi dal DOM
+const gridContainer = document.querySelector('.grid-container');
+const playButton = document.querySelector('button');
+
+// Funzione per creare la griglia
+const createGrid = () => {
+    // VerificO se la griglia è già stata creata, se già presente non crearne un'altra.
+    if (gridContainer.children.length > 0) {
+        return;
+    }
+
+    // Creo le celle
+    for (let i = 1; i <= 100; i++) {
+
+        // Creo un elemento per la cella
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        console.log('Cella numero: ', i)
+
+        // Aggiungo la cella alla griglia
+        gridContainer.appendChild(cell);
+    }
+}
+
+// Aggiungo l'event listener al bottone
+playButton.addEventListener('click', createGrid);

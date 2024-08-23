@@ -11,6 +11,7 @@ body {
     flex-basis: 10%;
     height: 70px;
     border: 1px solid black;
+    cursor: pointer;
 }
 
 .heart {
