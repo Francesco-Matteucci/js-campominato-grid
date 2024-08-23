@@ -40,6 +40,9 @@ const createGrid = () => {
         // Creo un elemento per la cella
         const cell = document.createElement('div');
         cell.classList.add('cell');
+        //Aggiungo il numero alle celle
+        cell.textContent = i;
+
         console.log('Cella numero: ', i)
 
         // Aggiungo la cella alla griglia

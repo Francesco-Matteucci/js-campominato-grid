@@ -8,6 +8,9 @@ body {
 }
 
 .cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-basis: 10%;
     height: 70px;
     border: 1px solid black;
